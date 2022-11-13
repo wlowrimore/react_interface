@@ -1,7 +1,10 @@
-import React from 'react'
+import { useState } from 'react'
 import { BiCaretDown, BiCheck, BiSearch } from 'react-icons/bi'
 
-const DropDown = () => {
+const DropDown = ({ toggle }) => {
+  if (!toggle) {
+    return null;
+  }
   return (
     <div className='origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5'>
       <div
@@ -24,6 +27,8 @@ const DropDown = () => {
 }
 
 const Search = () => {
+  const [toggleSort, setToggleSort] = useState(false);
+
   return (
     <div className='py-5'>
       <div className='mt-1 relative rounded-md shadow-sm'>
@@ -37,10 +42,11 @@ const Search = () => {
         <div className='absolute inset-y-0 right-0 flex items-center'>
           <div>
             <button type='button'
-                    className='justify-center inline-flex px-2 py-1 rounded-sm bg-blue-400 border border-blue-400 text-sm text-white font-normal'>
+                    onClick={() => { setToggleSort(!toggleSort) }}
+                    className='justify-center inline-flex px-2 py-1 rounded-sm bg-blue-400 border border-blue-400 hover:bg-blue-500  hover:border-blue-500 text-sm text-white font-normal'>
                     Sort By <BiCaretDown className='ml-2' />
             </button>
-            <DropDown />
+            <DropDown toggle={toggleSort} />
           </div>
         </div>
       </div>
