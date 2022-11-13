@@ -1,5 +1,27 @@
 import React from 'react'
-import { BiCaretDown, BiSearch } from 'react-icons/bi'
+import { BiCaretDown, BiCheck, BiSearch } from 'react-icons/bi'
+
+const DropDown = () => {
+  return (
+    <div className='origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5'>
+      <div
+        className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between'
+        role='menuitem'>Pet Name <BiCheck /></div>
+        <div
+        className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between'
+        role='menuitem'>Owner Name <BiCheck /></div>
+        <div
+        className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between'
+        role='menuitem'>Date <BiCheck /></div>
+        <div
+        className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between'
+        role='menuitem'>Asc <BiCheck /></div>
+        <div
+        className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between'
+        role='menuitem'>Desc <BiCheck /></div>
+    </div>
+  )
+}
 
 const Search = () => {
   return (
@@ -15,9 +37,10 @@ const Search = () => {
         <div className='absolute inset-y-0 right-0 flex items-center'>
           <div>
             <button type='button'
-                    className='justify-center flex px-4 py-1 rounded-sm bg-blue-400 border pl-2 border-blue-400 text-sm text-white'>
+                    className='justify-center inline-flex px-2 py-1 rounded-sm bg-blue-400 border border-blue-400 text-sm text-white font-normal'>
                     Sort By <BiCaretDown className='ml-2' />
             </button>
+            <DropDown />
           </div>
         </div>
       </div>
