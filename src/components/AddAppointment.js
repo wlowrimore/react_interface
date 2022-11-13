@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState }       from 'react';
 import { BiCalendarPlus } from 'react-icons/bi';
 
 const AddAppointment = ({ onSendAppointment, lastId }) => {
@@ -14,6 +14,8 @@ const AddAppointment = ({ onSendAppointment, lastId }) => {
   const [toggleForm, setToggleForm] = useState(false);
   const [formData, setFormData] = useState(clearData)
 
+  // Function attacted to Submit Button for adding new appointments
+
   function formDataPublish() {
     const appointmentInfo = {
       id: lastId + 1,
@@ -27,7 +29,7 @@ const AddAppointment = ({ onSendAppointment, lastId }) => {
     setToggleForm(!toggleForm)
   }
 
-  return (
+  return (    
     <div>
       <button 
         onClick={() => { setToggleForm(!toggleForm) }}
